@@ -3,7 +3,7 @@
 ## Шаблон для автоматизаии тестирования на python
 
 ### Шаги
-1. Склонировать проект 'git clone https://github.com/ms-bondarenko/Diplome.git'
+1. Склонировать проект 'git clone https://github.com/ms-bondarenko/Mihail_Bondarenko_final.git'
 2. Установить все зависимости
 3. Запустить тесты 'pytest'
 
@@ -29,3 +29,5 @@
 - pip install pytest
 - pip install selenium
 - pip install webdriver-manager
+- pip install allure-pytest
+- pip install requests
