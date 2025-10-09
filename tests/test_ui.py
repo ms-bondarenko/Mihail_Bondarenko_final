@@ -18,4 +18,11 @@ def test_create_event(browser):
 
     assert schedule_page.get_current_url().endswith("skyeng.ru/schedule")
 
+    schedule_page.create()
+    element = WebDriverWait(browser, 10).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "long-view__time")))
+
+    assert element is not None
+
+    schedule_page.editing()
     sleep(10)
