@@ -35,5 +35,10 @@ class Schedule:
         self.__driver.find_element(By.CSS_SELECTOR, ".root.-type-primary.-color-brand.-size-m.-active").click()
 
 
-    def editing(self):
-        self.__driver.find_element(By.XPATH, '[text()="12:00 – 12:30"]').click()
+    def title_page(self):
+        self.__driver.get("https://teachers.skyeng.ru/schedule")
+        wait = WebDriverWait(self.__driver, 10)  # ждем до 10 секунд
+        title = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '.page-title.mr16')))
+        return title.text
+
+

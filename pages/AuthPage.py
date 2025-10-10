@@ -1,11 +1,12 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from tests.config import base_url
 
 class AuthPage:
     def __init__(self, driver)->None:
         self.__driver = driver
-        self.__url = "https://id.skyeng.ru/login"
+        self.__url = base_url
 
     def go(self):
         self. __driver.get(self.__url)

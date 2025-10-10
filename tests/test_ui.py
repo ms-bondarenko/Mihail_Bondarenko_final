@@ -1,14 +1,16 @@
+from .conftest import browser
 from ..pages.AuthPage import AuthPage
 from ..pages.Schedule import Schedule
 from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from ..tests.config import login , password
 
 def test_auth(browser):
     auth_page = AuthPage(browser)
     auth_page.go()
-    auth_page.login_as("test.tst345@skyeng.ru","2DbhAAPG6q")
+    auth_page.login_as(login,password)
 
     assert auth_page.get_current_url().endswith("teacher.skyeng.ru/")
 
@@ -23,6 +25,8 @@ def test_create_event(browser):
         EC.presence_of_element_located((By.CLASS_NAME, "long-view__time")))
 
     assert element is not None
+def test_title_page(browser):
+    schedule_page = Schedule(browser)
+    title = schedule_page.title_page()
 
-    schedule_page.editing()
-    sleep(10)
+    assert title == "Расписание"
