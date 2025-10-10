@@ -12,7 +12,10 @@ class AuthPage:
         self. __driver.get(self.__url)
 
     def login_as(self, email: str,password: str ):
-        self.__driver.find_element(By.CSS_SELECTOR, '.link.link--primary.js-send-otp-form-to-username-password').click()
+        element = WebDriverWait(self.__driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, '.link.link--primary.js-send-otp-form-to-username-password'))
+        )
+        element.click()
         self.__driver.find_element(By.CSS_SELECTOR, 'input[name="username"][type="text"].input.js-username-password-form-input[placeholder="Телефон, почта или логин"]').send_keys(email)
         self.__driver.find_element(By.CSS_SELECTOR, "input[name='password'][type='password'].input.js-username-password-form-input.js-username-password-form-password-input[placeholder='Пароль']").send_keys(password)
         self.__driver.find_element(By.CSS_SELECTOR, ".js-username-password-form-button").click()
