@@ -31,3 +31,6 @@
 - pip install webdriver-manager
 - pip install allure-pytest
 - pip install requests
+
+### Если pytest не запускает проект то установите переменную окружения
+- "$env:PYTHONPATH = "путь к корневой директории проекта"
