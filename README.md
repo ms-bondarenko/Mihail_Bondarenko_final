@@ -13,7 +13,7 @@
 - "$env:PYTHONPATH = "путь к корневой директории проекта"
 - например ($env:PYTHONPATH="C:\Users\SMART\Desktop\diplom\Mihail_Bondarenko_final")
 5. Установить зависимости: pip install -r requirements.txt
-6. Зайти на страницу https://teachers.skyeng.ru/schedule предварительно авторизовавшись login, pass текущий token в допах, открыть
+6. Зайти на страницу https://teachers.skyeng.ru/schedule предварительно авторизовавшись (login, pass текущий token в допах), открыть
    DevTool перейти на вкладку Application выбрать Cookies затем https://teachers.skyeng.ru найти token_global скопировать
    и вставить в config.py in Cookie = 'token_global=скопированный токен'(токен протухает каждый день)
 7. Вставить значения в допах в соответствующие ключи в config.py
